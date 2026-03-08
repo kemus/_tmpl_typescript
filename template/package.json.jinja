@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node --experimental-strip-types --test tests/index.test.ts",
+{% if ts_test_framework == 'vitest' %}    "test": "vitest run",{% else %}    "test": "node --experimental-strip-types --test tests/index.test.ts",{% endif %}
     "lint": "eslint src/ tests/",
     "format": "prettier --write ."
   },
@@ -16,6 +16,7 @@
     "eslint": "^9",
     "prettier": "^3",
     "typescript": "^5",
-    "typescript-eslint": "^8"
+{% if ts_test_framework == 'vitest' %}    "typescript-eslint": "^8",
+    "vitest": "^3"{% else %}    "typescript-eslint": "^8"{% endif %}
   }
 }
