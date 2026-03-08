@@ -1,0 +1,9 @@
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
+import { hello } from "../src/index.ts";
+
+describe("{{ project_name }}", () => {
+  it("returns a greeting", () => {
+    assert.equal(hello(), "Hello from {{ project_name }}!");
+  });
+});

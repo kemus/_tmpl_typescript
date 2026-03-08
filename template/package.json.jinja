@@ -1,0 +1,21 @@
+{
+  "name": "{{ project_name_kebab }}",
+  "version": "0.1.0",
+  "description": "{{ project_description }}",
+  "author": "{{ author }} <{{ author_email }}>",
+  "license": "{{ license }}",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --experimental-strip-types --test tests/index.test.ts",
+    "lint": "eslint src/ tests/",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "prettier": "^3",
+    "typescript": "^5",
+    "typescript-eslint": "^8"
+  }
+}
