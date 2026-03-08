@@ -1,6 +1,6 @@
 _subdirectory: template
 _min_copier_version: "9.0.0"
-_answers_file: .config/copier/ecmascript-answers.yml
+_answers_file: .config/copier/typescript-answers.yml
 _jinja_extensions:
   - copier_template_extensions.TemplateExtensionLoader
 _exclude:
