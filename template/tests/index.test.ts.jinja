@@ -1,3 +1,13 @@
+{% if ts_test_framework == 'vitest' -%}
+import { describe, it, expect } from "vitest";
+import { hello } from "../src/index.ts";
+
+describe("{{ project_name }}", () => {
+  it("returns a greeting", () => {
+    expect(hello()).toBe("Hello from {{ project_name }}!");
+  });
+});
+{%- else -%}
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { hello } from "../src/index.ts";
@@ -7,3 +17,4 @@ describe("{{ project_name }}", () => {
     assert.equal(hello(), "Hello from {{ project_name }}!");
   });
 });
+{%- endif %}
